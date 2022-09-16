@@ -2,10 +2,10 @@ import Config
 
 # Configure your database
 config :gitpod, Gitpod.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "gitpod",
+  password: "",
   hostname: "localhost",
-  database: "gitpod_dev",
+  database: "postgres",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

@@ -1,0 +1,21 @@
+image:
+  file: .gitpod/Dockerfile
+
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - name: phx
+    init: mix deps.get && mix compile # runs during prebuild
+    command: mix ecto.migrate && iex -S mix phx.server
+
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 4000
+    onOpen: open-preview
+  - port: 5432
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - elixir-lsp.elixir-ls
+    - bradlc.vscode-tailwindcss
+    - victorbjorklund.phoenix
